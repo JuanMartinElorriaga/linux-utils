@@ -1,0 +1,22 @@
+# Modificar archivo /usr/share/X11/xkb/symbols/es
+# En este caso, modifique el teclado espaniol "nodeadkeys", ya que nunca se usaria para otra cosa
+# Una vez finalizado, limpiar el cache con rm -rf /var/lib/xkb/*
+
+
+partial alphanumeric_keys
+xkb_symbols "nodeadkeys" {
+
+    include "es(basic)"
+
+    name[Group1]="Spanish (no dead keys)";
+
+    key <AD11>	{ [     parenleft, bracketleft,  braceleft     ]	};
+    key <AD12>	{ [     parenright, bracketright,  braceright  ]	};
+    key <AC10>	{ [    ntilde,     Ntilde,   asciitilde,  doubleacute ]	};
+    key <AC11>	{ [     dead_acute,  dead_grave, plus              ]	};
+    key <BKSL>	{ [  apostrophe,   quotedbl,   backslash       ]	};
+    key <AB10>	{ [     minus, underscore, dead_belowdot,    abovedot ]	};
+};
+
+
+# Referencia: https://askubuntu.com/questions/296155/how-can-i-remap-keyboard-keys
